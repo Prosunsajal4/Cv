@@ -1,89 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Prosun Mukherjee - CV</title>
   <style>
     body {
       font-family: 'Consolas', sans-serif;
+      margin: 0;
       padding: 30px;
       background: linear-gradient(to right, #e0f7fa, #f3e5f5);
-      background-attachment: fixed;
     }
 
-    .welcome-heading {
+    h1.welcome-heading {
       text-align: center;
-      color: #2c2c2c;
       font-size: 38px;
       font-weight: bold;
+      color: #2c2c2c;
       margin-bottom: 30px;
-      text-shadow: 2px 2px 4px #aaa;
       border-bottom: 3px solid #512da8;
-      display: block;
-      margin: 0 auto;
       padding-bottom: 10px;
+      text-shadow: 2px 2px 4px #aaa;
     }
 
-    .button-group,
-    #cvBtn {
-      text-align: center;
-      background: #512da8;
+    button, .button-group button {
+      display: inline-block;
+      background-color: #512da8;
+      color: white;
       font-weight: bold;
-      color: #fff;
       border: none;
       padding: 10px 20px;
-      margin: 10px auto;
+      margin: 10px 5px;
       cursor: pointer;
-      border-radius: 5px;
-      transition: 0.3s ease;
-      display: block;
+      border-radius: 6px;
+      transition: background 0.3s ease;
     }
 
-    #cvBtn:hover,
-    .button-group button:hover,
-    #photoBtn:hover {
+    button:hover, .button-group button:hover {
       background-color: #311b92;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #f3e5f5;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 0px 15px #b39ddb;
+      display: none;
     }
 
     .header {
       text-align: center;
       background: #ede7f6;
-      color: #3e3e3e;
       padding: 20px;
-      border-radius: 8px;
-    }
-
-    #photoBtn {
-      margin-top: 10px;
-      background: #512da8;
-      font-weight: bold;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #photo {
-      margin-top: 15px;
-      display: none;
-      max-width: 200px;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 20px auto;
-      background: #f3e5f5;
-      padding: 20px;
-      box-shadow: 0px 0px 15px #b39ddb;
-      border-radius: 12px;
-      display: none;
     }
 
     .header img {
@@ -91,6 +62,8 @@
       height: 130px;
       border-radius: 50%;
       border: 3px solid #7e57c2;
+      display: none;
+      margin-top: 10px;
     }
 
     .section {
@@ -105,30 +78,28 @@
       color: #4a148c;
     }
 
-    ul {
-      list-style-type: square;
+    ul, ol {
+      padding-left: 20px;
     }
 
     .result-table {
       display: none;
-      margin: 0 auto;
-      margin-top: 20px;
+      margin: 20px auto;
       border-collapse: collapse;
       width: 100%;
+      background: #f3e5f5;
       box-shadow: 0 0 10px #b39ddb;
-      background-color: #f3e5f5;
     }
 
-    .result-table th,
-    .result-table td {
+    .result-table th, .result-table td {
       border: 2px solid #ce93d8;
-      padding: 12px;
+      padding: 10px;
+      text-align: left;
     }
 
     .result-table th {
       background-color: #9575cd;
       color: white;
-      font-weight: bold;
     }
 
     .result-table tr:nth-child(even) {
@@ -136,8 +107,25 @@
     }
 
     a {
-      text-decoration: none;
       color: #4a148c;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      .header img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -151,39 +139,39 @@
     <div class="header">
       <h1>Prosun Mukherjee</h1>
       <button onclick="togglePhoto()" id="photoBtn">Show My Photo</button><br>
-      <img id="photo" src="Prosun.JPG" alt="My Photo">
+      <img id="photo" src="Prosun.JPG" alt="Photo of Prosun Mukherjee">
     </div>
 
     <div class="section">
       <h2>Personal Information</h2>
-      <p><b>Father's Name:</b> Partha Protim Mukherjee</p>
-      <p><b>Mother's Name:</b> Deboki Mukherjee</p>
-      <p><b>Present Address:</b> Birshreshta Ruhul Amin Hall, Khulna University</p>
-      <p><b>Permanent Address:</b> Pipulbunia, Rampal, Bagerhat</p>
-      <p><b>Date of Birth:</b> 27 November, 2003</p>
-      <p><b>Blood Group:</b> B+</p>
-      <p><b>Nationality:</b> Bangladeshi</p>
-      <p><b>Email:</b> prosunsajal123@gmail.com</p>
-      <p><b>Phone:</b> +8801911572117</p>
+      <p><strong>Father's Name:</strong> Partha Protim Mukherjee</p>
+      <p><strong>Mother's Name:</strong> Deboki Mukherjee</p>
+      <p><strong>Present Address:</strong> Birshreshta Ruhul Amin Hall, Khulna University</p>
+      <p><strong>Permanent Address:</strong> Pipulbunia, Rampal, Bagerhat</p>
+      <p><strong>Date of Birth:</strong> 27 November, 2003</p>
+      <p><strong>Blood Group:</strong> B+</p>
+      <p><strong>Nationality:</strong> Bangladeshi</p>
+      <p><strong>Email:</strong> prosunsajal123@gmail.com</p>
+      <p><strong>Phone:</strong> +8801911572117</p>
     </div>
 
     <div class="section">
       <h2>Education</h2>
       <ul>
-        <li><b>Khulna University</b> – ECE, 3rd Year 1st Term (Running)</li>
-        <li><b>Khulna Public College</b> – HSC 2021</li>
-        <li><b>Kadirkhola Secondary School</b> – SSC 2019</li>
+        <li>Khulna University – ECE, 3rd Year 1st Term (Running)</li>
+        <li>Khulna Public College – HSC 2021</li>
+        <li>Kadirkhola Secondary School – SSC 2019</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>Exam Results</h2>
       <div class="button-group">
-        <button onclick="toggleResult('psc')">PSC Result</button>
-        <button onclick="toggleResult('jsc')">JSC Result</button>
-        <button onclick="toggleResult('ssc')">SSC Result</button>
-        <button onclick="toggleResult('hsc')">HSC Result</button>
-        <button onclick="toggleResult('bsc')">BSc Result</button>
+        <button onclick="toggleResult('psc')">PSC</button>
+        <button onclick="toggleResult('jsc')">JSC</button>
+        <button onclick="toggleResult('ssc')">SSC</button>
+        <button onclick="toggleResult('hsc')">HSC</button>
+        <button onclick="toggleResult('bsc')">BSc</button>
       </div>
 
       <table id="psc" class="result-table">
@@ -213,78 +201,12 @@
         <tr><td>3rd</td><td>2.94</td></tr>
         <tr><td>4th</td><td>3.29</td></tr>
         <tr><td>Ongoing</td><td>....</td></tr>
-<<<<<<< HEAD
       </table>
-=======
-        </table>
-        </div>
-        <div class="section">
-        <h2>Objectives</h2>
-        <ul>
-            <p>"Web developer with expertise in HTML, CSS, JavaScript, React, Django, Bootstrap and modern front-end frameworks Seeking a position
-                in a fast-paced development environment to enhance user experience and deliver high-quality web applications."</p>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>Job Experience</h2>
-                <ul>
-                    <li>No Job Experience</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2 >Skills</h2>
-                <ol>
-                    <li style="color:maroon">Designing Webpage</li>
-                    <ul><li>HTML,JavaScript,Django,CSS</li></ul>
-                    <li style="color:maroon">Programming</li>
-                    <ul><li>Java,C,C++,Python</li></ul>
-                    <li style="color:maroon">MS Office</li>
-                    <ul><li>Word,Powerpoint,Excel,Azure</li></ul>              
-                </ol>
-            </div>
-            <div class="section">
-                <h2>Projects</h2>
-                <a href="http://itsprosun.me/#portfolio" target = "_main" style="color:rebeccapurple">view projects</a>
-            </div>
-        <div class="section">
-        <h2>Hobby</h2>
-        <ul>
-        <li>Coding</li>
-        <li>Listening Song</li>
-        <li>Watching Movies and Series</li>
-        
-        </ul>
-    </div>
-    <div class="section">
-        <h2>Languages</h2>
-        <ul>
-            <li>Bangla</li>
-            <li>English</li>
-        </ul>
-    </div>
-    <div class="section">
-        <h2>Achievements</h2>
-        <p>No Achievements</p>
-    </div>
-    
-    <div class="section">
-        <h2>References</h2>
-        <p>No References Available</p>
-    </div>
-    <div class="section">
-        <h2>
-            <a href ="http://itsprosun.me/" target ="_top" style="color: maroon;">
-                Portfolio
-            </a>
-            </h2>
-    </div>
-    </div>
->>>>>>> a0354f542d6f318aa74ef46e075a9c1a9693a5dc
     </div>
 
     <div class="section">
       <h2>Objectives</h2>
-      <p>"Web developer with expertise in HTML, CSS, JavaScript, React, Django, Bootstrap and modern front-end frameworks. Seeking a position in a fast-paced development environment to enhance user experience and deliver high-quality web applications."</p>
+      <p>Web developer with expertise in HTML, CSS, JavaScript, React, Django, Bootstrap, and modern front-end frameworks. Seeking a position in a fast-paced development environment to enhance user experience and deliver high-quality web applications.</p>
     </div>
 
     <div class="section">
@@ -301,7 +223,7 @@
 
     <div class="section">
       <h2>Projects</h2>
-      <a href="http://itsprosun.me/#portfolio" target="_blank">View Projects</a>
+      <p><a href="http://itsprosun.me/#portfolio" target="_blank">View Projects</a></p>
     </div>
 
     <div class="section">
@@ -332,9 +254,7 @@
     </div>
 
     <div class="section">
-      <h2>
-        <a href="http://itsprosun.me/" target="_blank">Visit My Portfolio</a>
-      </h2>
+      <h2><a href="http://itsprosun.me/" target="_blank">Visit My Portfolio</a></h2>
     </div>
   </div>
 
@@ -342,35 +262,23 @@
     function toggleCV() {
       const cv = document.getElementById("cv");
       const btn = document.getElementById("cvBtn");
-      if (cv.style.display === "none" || cv.style.display === "") {
-        cv.style.display = "block";
-        btn.innerText = "Hide My CV";
-      } else {
-        cv.style.display = "none";
-        btn.innerText = "Show My CV";
-      }
+      const isVisible = cv.style.display === "block";
+      cv.style.display = isVisible ? "none" : "block";
+      btn.innerText = isVisible ? "Show My CV" : "Hide My CV";
     }
 
     function togglePhoto() {
       const img = document.getElementById("photo");
       const btn = document.getElementById("photoBtn");
-      if (img.style.display === "none" || img.style.display === "") {
-        img.style.display = "block";
-        btn.innerText = "Hide My Photo";
-      } else {
-        img.style.display = "none";
-        btn.innerText = "Show My Photo";
-      }
+      const isVisible = img.style.display === "block";
+      img.style.display = isVisible ? "none" : "block";
+      btn.innerText = isVisible ? "Show My Photo" : "Hide My Photo";
     }
 
     function toggleResult(id) {
       const tables = document.querySelectorAll(".result-table");
       tables.forEach(table => {
-        if (table.id === id) {
-          table.style.display = table.style.display === "table" ? "none" : "table";
-        } else {
-          table.style.display = "none";
-        }
+        table.style.display = table.id === id && table.style.display !== "table" ? "table" : "none";
       });
     }
   </script>
